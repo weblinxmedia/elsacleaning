@@ -7,7 +7,7 @@ export default function HeroBackground() {
   const { hero_image_url } = useSettings() // <-- Add this
 
   // Fallback to default local image if not set in dashboard
-  const imageSrc = hero_image_url || '/images/banner.webp'
+  const imageSrc = hero_image_url || '/images/banner.jpg'
 
   return (
     <div className="absolute top-0 left-0 w-full h-[100%] z-0">

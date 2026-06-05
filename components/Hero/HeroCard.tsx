@@ -25,7 +25,7 @@ const { phone } = useSettings()
 
         {/* H1 Heading - NOW DYNAMIC */}
         <h1 className="font-parkinsans text-3xl w-full md:w-[100%] mx-auto md:text-4xl lg:text-[40px] font-normal text-center text-luxury-dark leading-tight mb-4">
-          {hero_heading || 'Your #1 Florida Commercial Cleaning Service'}
+          {hero_heading || 'Looking for High Quality Cleaning Service? Quote Us Now!'}
         </h1>
 
         {/* Paragraph */}
