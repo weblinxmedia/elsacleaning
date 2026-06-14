@@ -1,5 +1,5 @@
 'use client' // <-- Add this
-
+export const dynamic = 'force-dynamic'
 import { Star } from 'lucide-react'
 import HeroForm from './HeroForm'
 import { useSettings } from '@/app/context/SettingsContext' // <-- Add this
