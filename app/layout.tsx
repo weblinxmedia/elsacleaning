@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import Providers from './Providers'
 import { getSettings } from '@/lib/getSettings' // 🔹 Import your helper
 import ScrollToTop from '@/components/ScrollToTop'
-
+export const dynamic = 'force-dynamic' 
 const parkinsans = Parkinsans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
