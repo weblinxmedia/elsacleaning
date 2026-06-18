@@ -2,9 +2,15 @@
 
 import { SettingsProvider } from '@/app/context/SettingsContext'
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default function Providers({ 
+  children, 
+  initialSettings // 🔹 Receive settings from layout
+}: { 
+  children: React.ReactNode, 
+  initialSettings: any 
+}) {
   return (
-    <SettingsProvider>
+    <SettingsProvider initialData={initialSettings}>
       {children}
     </SettingsProvider>
   )

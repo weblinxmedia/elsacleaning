@@ -1,5 +1,5 @@
 'use client' // <-- Add this
-
+export const dynamic = 'force-dynamic'
 import Image from 'next/image'
 import { useSettings } from '@/app/context/SettingsContext' // <-- Add this
 

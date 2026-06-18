@@ -38,21 +38,21 @@ const defaultSettings: SiteSettings = {
 
 const SettingsContext = createContext<SiteSettings>(defaultSettings)
 
-export function SettingsProvider({ children }: { children: ReactNode }) {
-  const [settings, setSettings] = useState<SiteSettings>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('site_settings')
-      if (saved) {
-        try {
-          return { ...defaultSettings, ...JSON.parse(saved) }
-        } catch (e) {
-          return defaultSettings
-        }
-      }
-    }
-    return defaultSettings
-  })
+export function SettingsProvider({ 
+  children, 
+  initialData // 🔹 Receive initial data from server
+}: { 
+  children: ReactNode, 
+  initialData: any 
+}) {
+  // 🔥 INITIALIZE STATE WITH SERVER DATA
+  // This removes the flicker because the first render matches the server HTML exactly.
+  const [settings, setSettings] = useState<SiteSettings>(() => ({
+    ...defaultSettings,
+    ...initialData
+  }))
 
+  // Keep the background fetch to keep things synced if you update in dashboard
   useEffect(() => {
     const fetchSettings = async () => {
       try {
@@ -67,7 +67,6 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
         console.error('Failed to load site settings:', error)
       }
     }
-
     fetchSettings()
   }, [])
 
