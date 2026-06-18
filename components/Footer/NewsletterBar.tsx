@@ -4,7 +4,7 @@ import AnimateIn from "../AnimateIn"
 
 export default function NewsletterBar() {
   return (
-    <AnimateIn>
+   
     <div className="flex flex-change relative w-fit mx-auto rounded-b-4xl px-6 pb-3 bg-white flex-col md:flex-row items-center justify-between gap-2 mb-16">
       <p> <img src="/images/c2.svg"
  alt="" 
@@ -28,6 +28,6 @@ alt="" className='absolute top-[0px]  -right-8 scale-x-100'/> </p>
           Subscribe
         </button>
       </div>
-    </div></AnimateIn>
+    </div>
   )
 }
