@@ -1,18 +1,24 @@
+// app/layout.tsx
+
 import type { Metadata } from 'next'
 import './globals.css'
 import { Parkinsans, Outfit } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Providers from './Providers'
-import { getSettings } from '@/lib/getSettings' // 🔹 Import your helper
+import { getSettings } from '@/lib/getSettings'
 import ScrollToTop from '@/components/ScrollToTop'
-export const dynamic = 'force-dynamic' 
+import NextTopLoader from 'nextjs-toploader'; // 🔹 Import the loader
+
+export const dynamic = 'force-dynamic'
+
 const parkinsans = Parkinsans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-parkinsans',
   display: 'swap',
 })
+
 const outfit = Outfit({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
@@ -20,26 +26,27 @@ const outfit = Outfit({
   display: 'swap',
 })
 
-// Note: You can also make Metadata dynamic here if you want!
-export const metadata: Metadata = {
-  title: "Elsa's House Cleaning | Luxury Commercial Cleaning",
-  description: 'Premium cleaning services',
-   icons: {
-    icon: '/images/else2.png',
-    shortcut: '/images/shortcut-icon.png',
-    apple: '/apple-icon.png',
-  },
-}
-
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  // 🔥 1. Fetch settings on the SERVER
   const initialSettings = await getSettings()
 
   return (
     <html lang="en" className={`${parkinsans.variable} ${outfit.variable} scroll-smooth`}>
       <body className={`${parkinsans.className} ${outfit.className} antialiased bg-white text-gray-900`}>
+          {/* 🔹 Horizontal Loading Bar Configuration */}
+          <NextTopLoader 
+            color="var(--color-luxury-pink)" // Your brand luxury-pink
+            initialPosition={0.08}
+            crawlSpeed={200}
+            zIndex={99999999999}
+            height={4}
+            crawl={true}
+            showSpinner={false}
+            easing="ease"
+            speed={200}
+            shadow="0 0 10px var(--color-luxury-pink),0 0 5px var(--color-luxury-pink)"
+          />
+          
           <ScrollToTop />
-          {/* 🔥 2. Pass those settings into Providers */}
           <Providers initialSettings={initialSettings}>
             <main>{children}</main>
           </Providers>
