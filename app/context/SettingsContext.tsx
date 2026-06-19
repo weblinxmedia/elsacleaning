@@ -20,17 +20,17 @@ export interface SiteSettings {
 }
 
 const defaultSettings: SiteSettings = {
-  site_name: "Elsa's House Cleaning",
-  phone: '+1 650-281-8622',
-  email: 'iloveelsascleaning@gmail.com',
-  meta_title: "Elsa's House Cleaning",
+  site_name: "",
+  phone: '',
+  email: '',
+  meta_title: "",
   meta_description: 'Professional cleaning services',
   meta_keywords: 'cleaning, commercial, office',
-  logo_url: '/images/else2.png',
+  logo_url: '/images/logoreal.png',
   office_hours: 'Monday to Saturday, 9:00 AM to 4:00 PM',
   address: '',
   hero_heading: 'Looking for High Quality Cleaning Service? Quote Us Now!',
-  hero_image_url: '/images/banner.jpg',
+  hero_image_url: '/images/herobanner.jpg',
   social_facebook: '',
   social_instagram: '',
   social_linkedin: '',
