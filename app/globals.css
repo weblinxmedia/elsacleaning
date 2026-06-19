@@ -231,6 +231,9 @@ section{
         flex-direction: column;
 
 }
+  .hero-card{
+    max-width: 90vw !important;
+  }
 }
 @media screen and (max-width:650px) {
     .padding-hero{
