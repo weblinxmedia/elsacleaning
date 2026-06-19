@@ -34,7 +34,7 @@ export default function CopyrightBar() {
       <div className="flex flex-col md:flex-row items-center justify-center gap-1 text-center md:text-left">
         <div className="flex items-center gap-2 text-gray-500 text-[16px]">
           <Copyright size={16} />
-          <span>Copyright {currentYear} - Elsa's House Cleaning</span>
+          <span>Copyright {currentYear} - Shazam Windows Cleaning</span>
         </div>
         <div className="text-gray-500 text-[16px]">
           | Developed & Marketing by{' '}
