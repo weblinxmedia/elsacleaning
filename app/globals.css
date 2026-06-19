@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-luxury-pink: #00b6fd;
-  --color-luxury-pink-soft: #baecff;
+  --color-luxury-pink: #fa7b3c;
+  --color-luxury-pink-soft: #ffbd9d;
   --color-luxury-dark: #1a1a1a;
   --color-luxury-lite: #ffffff;
   --color-luxury-dark: #000000;
@@ -17,6 +17,7 @@
 .nav-link {
   position: relative;
   padding-bottom: 4px;
+ 
 }
 .nav-link::after {
   content: '';

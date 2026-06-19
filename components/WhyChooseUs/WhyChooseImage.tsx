@@ -6,7 +6,7 @@ export default function WhyChooseImage() {
   return (
     <div ref={animRef} className="relative w-full h-[300px] md:h-[450px] lg:h-[580px] rounded-2xl overflow-hidden shadow-2xl group">
       <img
-      src="https://s3-media0.fl.yelpcdn.com/bphoto/Ib6QcI-PVJOJBhSYOKRQYA/o.jpg"
+      src="https://shazamcleanwindows.com/assets/building-feature-DZQm2Y8-.jpg"
     alt="Sparkling clean office space"
         
         

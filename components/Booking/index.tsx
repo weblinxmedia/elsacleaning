@@ -10,7 +10,7 @@ export default function Booking() {
       {/* Background Image Layer */}
       <div className="absolute inset-0  z-0">
         <img
-          src="https://s3-media0.fl.yelpcdn.com/bphoto/Ib6QcI-PVJOJBhSYOKRQYA/o.jpg"  alt="Cleaning background"
+          src="https://shazamcleanwindows.com/assets/threestory-BzAbYM1P.jpg"  alt="Cleaning background"
           
           
           className="object-cover"
