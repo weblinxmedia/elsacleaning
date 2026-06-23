@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Send, X, Sparkles } from 'lucide-react'
+import { Send, X, Sparkles, RotateCcw, Smile, Paperclip } from 'lucide-react'
 import ChatMessage from './ChatMessage'
 import { useChat } from '@ai-sdk/react'
 
@@ -58,27 +58,49 @@ export default function ChatWindow({ isOpen, onClose, initialMessages = [] }: Ch
           className="fixed bottom-24 right-6 z-[999999999] flex h-[600px] max-h-[80vh] w-[380px] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-[2rem] bg-white shadow-2xl ring-1 ring-black/5"
         >
           {/* Header */}
-          <div className="flex items-center justify-between bg-luxury-pink px-6 py-4 text-white">
+          <div className="flex items-center justify-between bg-white px-6 py-4 border-b border-gray-100">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-luxury-pink text-white shadow-sm">
                 <Sparkles size={20} />
               </div>
               <div>
-                <h3 className="font-parkinsans text-lg font-medium tracking-wide">Shazam Concierge</h3>
-                <p className="font-outfit text-xs text-white/80">Premium Digital Support</p>
+                <h3 className="font-parkinsans text-medium font-semibold text-gray-900 tracking-tight">Corner Stone</h3>
+                <p className="text-[12px] text-gray-400 -mt-0.5">
+                  Floor Care LLC
+                </p>
               </div>
             </div>
-            <button
-              onClick={onClose}
-              className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/20"
-              aria-label="Close chat"
-            >
-              <X size={20} />
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setMessages([])}
+                className="flex h-8 w-8 items-center justify-center rounded-full text-luxury-pink transition-colors hover:bg-gray-100"
+                aria-label="Restart chat"
+              >
+                <RotateCcw size={18} />
+              </button>
+              <button
+                onClick={onClose}
+                className="flex h-8 w-8 items-center justify-center rounded-full text-gray-400 transition-colors hover:bg-gray-100"
+                aria-label="Close chat"
+              >
+                <X size={20} />
+              </button>
+            </div>
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto bg-gray-50/50 p-6 scrollbar-thin scrollbar-thumb-gray-200">
+          <div className="flex-1 overflow-y-auto bg-[#fafafa] p-6 scrollbar-thin scrollbar-thumb-gray-200">
+            {messages.length > 0 && (
+              <div className="mb-6 flex items-center justify-center">
+                <div className="h-px flex-1 bg-gray-200" />
+                <span className="px-4 text-[11px] font-medium text-gray-400 uppercase tracking-wider">
+                  <span className="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 align-middle"></span>
+                  We're online...
+                </span>
+                <div className="h-px flex-1 bg-gray-200" />
+              </div>
+            )}
+
             {messages.length === 0 ? (
               <div className="flex h-full flex-col items-center justify-center text-center opacity-60">
                 <Sparkles size={40} className="mb-4 text-luxury-pink" />
@@ -88,6 +110,24 @@ export default function ChatWindow({ isOpen, onClose, initialMessages = [] }: Ch
               </div>
             ) : (
               messages.map((message) => <ChatMessage key={message.id} message={message} />)
+            )}
+
+            {/* Suggested Replies */}
+            {messages.length === 1 && messages[0].role === 'assistant' && (
+              <div className="mt-4 flex flex-wrap justify-end gap-2">
+                {['Yes, sure!', 'No, thanks!', 'I want to book for a commercial property'].map((reply, i) => (
+                  <button
+                    key={i}
+                    onClick={() => sendMessage({ text: reply })}
+                    className={`rounded-full px-4 py-2 text-sm font-medium transition-transform hover:scale-105 ${i === 0
+                      ? 'bg-luxury-pink text-white shadow-sm'
+                      : 'border border-luxury-pink bg-white text-luxury-pink'
+                      }`}
+                  >
+                    {reply}
+                  </button>
+                ))}
+              </div>
             )}
 
             {(status === 'submitted' || status === 'streaming') && messages[messages.length - 1]?.role === 'user' && (
@@ -103,28 +143,32 @@ export default function ChatWindow({ isOpen, onClose, initialMessages = [] }: Ch
           </div>
 
           {/* Input Area */}
-          <div className="border-t border-gray-100 bg-white p-4">
-            <form onSubmit={onSubmit} className="relative flex items-center">
+          <div className="border-t border-gray-100 bg-white p-4 pt-3">
+            <form onSubmit={onSubmit} className="relative flex items-center mb-3">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Type your message..."
-                className="w-full rounded-full border border-gray-200 bg-[#f4f6f0] py-3 pl-5 pr-12 font-outfit text-sm text-gray-800 focus:border-luxury-pink focus:outline-none focus:ring-1 focus:ring-luxury-pink"
+                placeholder="Enter message"
+                className="w-full rounded-full bg-gray-100 py-3 pl-5 pr-12 font-outfit text-sm text-gray-800 placeholder-gray-400 transition-colors focus:bg-gray-50 focus:outline-none ring-1 ring-gray-300 focus:ring-1 focus:ring-luxury-pink/60"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || status === 'submitted' || status === 'streaming'}
-                className="absolute right-1 flex h-10 w-10 items-center justify-center rounded-full bg-luxury-pink text-white transition-transform hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
+                className="absolute right-3 flex h-8 w-8 items-center justify-center rounded-full text-gray-400 transition-colors hover:text-luxury-pink disabled:opacity-50"
                 aria-label="Send message"
               >
-                <Send size={18} className="translate-x-[-1px] translate-y-[1px]" />
+                <Send size={18} />
               </button>
             </form>
-            <div className="mt-2 text-center">
-              <span className="font-outfit text-[10px] text-gray-400">
-                AI can make mistakes. Please verify important info.
-              </span>
+
+            <div className="flex items-center gap-3 px-2 text-gray-400">
+              <button type="button" aria-label="Emoji" className="hover:text-gray-600 transition-colors">
+                <Smile size={18} />
+              </button>
+              <button type="button" aria-label="Attachment" className="hover:text-gray-600 transition-colors">
+                <Paperclip size={18} />
+              </button>
             </div>
           </div>
         </motion.div>
