@@ -56,14 +56,10 @@ export async function POST(req: Request) {
     // Build system prompt with live data
     const systemPrompt = await buildSystemPrompt()
 
-    // OPTIMIZATION: Only send the last 10 messages to save API credits and reduce token usage.
-    // As conversations get longer, sending the entire history multiplies your token usage rapidly.
-    const recentMessages = messages.slice(-10)
-
     const result = streamText({
-      model: google('gemini-1.5-flash'), // 1.5-flash is extremely fast and cost-effective
+      model: google('gemini-2.5-flash'),
       system: systemPrompt,
-      messages: await convertToModelMessages(recentMessages),
+      messages: await convertToModelMessages(messages),
       stopWhen: stepCountIs(3),
       tools: {
         capture_service_lead: tool({
