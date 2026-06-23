@@ -252,3 +252,20 @@ section{
 .nopadding{
   padding: 0 !important;
 }
+
+/* Chatbot Custom Scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--color-luxury-pink-soft);
+  border-radius: 20px;
+}
+
+/* Custom UI adjustments for chat inputs */
+.chat-bubble-user {
+  clip-path: polygon(10px 0px, 100% 0px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0px 100%, 0px 10px);
+}
