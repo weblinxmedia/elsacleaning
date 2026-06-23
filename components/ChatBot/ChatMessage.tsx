@@ -34,7 +34,7 @@ export default function ChatMessage({ message }: { message: any }) {
               return (
                 <div
                   key={i}
-                  className="font-outfit text-[14px] leading-[1.3rem]"
+                  className="font-outfit text-[14px] leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: parseMarkdown(part.text, isUser) }}
                 />
               )

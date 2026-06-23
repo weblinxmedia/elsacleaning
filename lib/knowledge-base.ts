@@ -91,14 +91,14 @@ async function getCompanySettings(): Promise<{ site_name: string; phone: string;
       .single()
     const settings = (data?.value || {}) as Record<string, string>
     return {
-      site_name: settings.site_name || 'Shazam Windows Cleaning',
+      site_name: settings.site_name || 'Cornerstone Floor Care LLC',
       phone: settings.phone || '',
       email: settings.email || '',
       address: settings.address || '',
       office_hours: settings.office_hours || 'Monday to Saturday, 9:00 AM to 4:00 PM',
     }
   } catch {
-    return { site_name: 'Shazam Windows Cleaning', phone: '', email: '', address: '', office_hours: 'Monday to Saturday, 9:00 AM to 4:00 PM' }
+    return { site_name: 'Cornerstone Floor Care LLC', phone: '', email: '', address: '', office_hours: 'Monday to Saturday, 9:00 AM to 4:00 PM' }
   }
 }
 

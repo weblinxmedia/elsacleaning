@@ -71,13 +71,13 @@ export default function ChatWindow({ isOpen, onClose, initialMessages = [] }: Ch
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <button
+              {/* <button
                 onClick={() => setMessages([])}
                 className="flex h-8 w-8 items-center justify-center rounded-full text-luxury-pink transition-colors hover:bg-gray-100"
                 aria-label="Restart chat"
               >
                 <RotateCcw size={18} />
-              </button>
+              </button> */}
               <button
                 onClick={onClose}
                 className="flex h-8 w-8 items-center justify-center rounded-full text-gray-400 transition-colors hover:bg-gray-100"
@@ -105,7 +105,7 @@ export default function ChatWindow({ isOpen, onClose, initialMessages = [] }: Ch
               <div className="flex h-full flex-col items-center justify-center text-center opacity-60">
                 <Sparkles size={40} className="mb-4 text-luxury-pink" />
                 <p className="font-parkinsans text-sm text-gray-500">
-                  Welcome to Shazam Windows Cleaning.<br />How may I assist you today?
+                  Welcome to Corner Stone Floor Care LLC.<br />How may I assist you today?
                 </p>
               </div>
             ) : (

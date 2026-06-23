@@ -20,7 +20,7 @@ export default function ChatBubble({ isOpen, onClick, unreadCount = 1 }: ChatBub
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 10, scale: 0.9 }}
             transition={{ duration: 0.4, type: 'spring' }}
-            className="flex origin-right items-center rounded-full bg-white/90 px-6 py-2 text-[14px] md:text-[16px] font-thin text-black shadow-lg border-1 border-luxury-pink"
+            className="flex origin-right items-center rounded-full bg-white px-6 py-2 text-[14px] md:text-[16px] font-thin text-black shadow-lg border-1 border-luxury-pink"
           >
             Chat with us 👋
           </motion.div>
