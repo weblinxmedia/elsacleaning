@@ -12,7 +12,7 @@ export interface ServiceCardData {
 export const servicesData: ServiceCardData[] = [
   {
     id: 1,
-    title: 'Event Special Cleaning',
+    title: 'Carpet Cleaning',
     icon: React.createElement(HouseIcon),
     features: [
       'Pre-event surface wipe-down',
@@ -36,30 +36,6 @@ export const servicesData: ServiceCardData[] = [
   },
   {
     id: 3,
-    title: 'Post Construction Cleaning',
-    icon: React.createElement(AirbnbIcon),
-    features: [
-      'Dust & debris removal',
-      'Window & glass cleaning',
-      'Floor scrubbing & paint removal',
-      'Final polish, touch-up & inspection walkthrough',
-    ],
-    link: '/services/airbnb-cleaning',
-  },
-  {
-    id: 4,
-    title: 'Airbnb Cleaning',
-    icon: React.createElement(YachtIcon),
-    features: [
-      'Linen & towel change',
-      'Kitchen reset',
-      'Bathroom deep clean',
-      'Full floor vacuum & mop + trash removal',
-    ],
-    link: '/services/yacht-cleaning',
-  },
-    {
-    id: 5,
     title: 'Commercial Cleaning',
     icon: React.createElement(YachtIcon),
     features: [
@@ -69,8 +45,8 @@ export const servicesData: ServiceCardData[] = [
       'Trash removal, recycling management & floor care',
     ],
     link: '/services/yacht-cleaning',
-  },  {
-    id: 6,
+  }, {
+    id: 4,
     title: 'Residential Cleaning',
     icon: React.createElement(YachtIcon),
     features: [

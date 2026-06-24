@@ -17,18 +17,6 @@ const SERVICES_KNOWLEDGE = `
    - Baseboard, wall wipe-down
    - Carpet steam clean & hard floor full polish
 
-3. **Post Construction Cleaning**
-   - Dust & debris removal
-   - Window & glass cleaning
-   - Floor scrubbing & paint removal
-   - Final polish, touch-up & inspection walkthrough
-
-4. **Airbnb Cleaning**
-   - Linen & towel change
-   - Kitchen reset
-   - Bathroom deep clean
-   - Full floor vacuum & mop + trash removal
-
 5. **Commercial Cleaning**
    - Workstation & desk sanitization
    - Common areas & breakroom

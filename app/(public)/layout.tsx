@@ -16,14 +16,14 @@ export async function generateMetadata(): Promise<Metadata> {
     const settings = (data?.value || {}) as Record<string, string>
 
     return {
-      title: settings.meta_title || "Shazam Windows Cleaning | The Best Windows Cleaner in the Town",
+      title: settings.meta_title || "Cornerstone Floor Care LLC | The Best Windows Cleaner in the Town",
       description: settings.meta_description || 'Premium cleaning services',
       keywords: settings.meta_keywords ? settings.meta_keywords.split(',').map((k) => k.trim()) : [],
-   
+
     }
   } catch (error) {
     return {
-      title: 'Shazam Windows Cleaning | The Best Windows Cleaner in the Town',
+      title: 'Cornerstone Floor Care LLC | The Best Windows Cleaner in the Town',
       description: 'Premium cleaning services',
     }
   }
@@ -31,12 +31,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
- <>
+    <>
 
       <Header />
       <main>{children}</main>
       <Footer />
       <ChatBot />
- </>
+    </>
   )
 }

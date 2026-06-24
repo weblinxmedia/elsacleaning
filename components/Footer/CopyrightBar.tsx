@@ -1,4 +1,4 @@
-import {  Copyright } from 'lucide-react'
+import { Copyright } from 'lucide-react'
 
 const socialIcons = [
   { icon: Copyright, href: '#' },
@@ -34,14 +34,14 @@ export default function CopyrightBar() {
       <div className="flex flex-col md:flex-row items-center justify-center gap-1 text-center md:text-left">
         <div className="flex items-center gap-2 text-gray-500 text-[16px]">
           <Copyright size={16} />
-          <span>Copyright {currentYear} - Shazam Windows Cleaning</span>
+          <span>Copyright {currentYear} - Cornerstone Floor Care LLC</span>
         </div>
         <div className="text-gray-500 text-[16px]">
           | Developed & Marketing by{' '}
-          <a 
-            href="https://weblinxmedia.online" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://www.weblinxmedia.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-luxury-pink font-semibold hover:underline"
           >
             Weblinx Media

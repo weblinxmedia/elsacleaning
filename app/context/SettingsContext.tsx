@@ -21,16 +21,16 @@ export interface SiteSettings {
 
 const defaultSettings: SiteSettings = {
   site_name: "",
-  phone: '',
+  phone: '+1 (301) 785-6581',
   email: '',
   meta_title: "",
   meta_description: 'Professional cleaning services',
   meta_keywords: 'cleaning, commercial, office',
-  logo_url: '/images/logoreal.png',
+  logo_url: '/images/demo/logomain.webp',
   office_hours: 'Monday to Saturday, 9:00 AM to 4:00 PM',
   address: '',
-  hero_heading: 'Looking for High Quality Cleaning Service? Quote Us Now!',
-  hero_image_url: '/images/herobanner.jpg',
+  hero_heading: 'A Spotless Space, Without the Stress. Claim Your Free Quote!',
+  hero_image_url: '/images/david.jpeg',
   social_facebook: '',
   social_instagram: '',
   social_linkedin: '',
@@ -38,12 +38,12 @@ const defaultSettings: SiteSettings = {
 
 const SettingsContext = createContext<SiteSettings>(defaultSettings)
 
-export function SettingsProvider({ 
-  children, 
+export function SettingsProvider({
+  children,
   initialData // 🔹 Receive initial data from server
-}: { 
-  children: ReactNode, 
-  initialData: any 
+}: {
+  children: ReactNode,
+  initialData: any
 }) {
   // 🔥 INITIALIZE STATE WITH SERVER DATA
   // This removes the flicker because the first render matches the server HTML exactly.

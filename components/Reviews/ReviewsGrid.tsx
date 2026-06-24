@@ -9,13 +9,13 @@ import ReviewTopAwards from './ReviewTopAwards'
 // import { useScrollStagger } from '@/lib/useScrollStagger'
 import { useScrollAnimation } from '@/lib/useScrollAnimation'
 import AnimateIn from '../AnimateIn'
-export default function ReviewsGrid({showFirstChild = true}) {
+export default function ReviewsGrid({ showFirstChild = true }) {
   const [reviews, setReviews] = useState<ReviewData[]>([])
   const [loading, setLoading] = useState(true)
 
 
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchReviews = async () => {
       try {
         const res = await fetch('/api/testimonials')
@@ -38,43 +38,43 @@ export default function ReviewsGrid({showFirstChild = true}) {
 
   return (
     <div className="relative rounded-3xl pt-0 pb-12 px-6 md:px-12"
-    style={
-    {
-      background:'linear-gradient(to bottom, #f3f5f0 10%, #fff 100%)'
-    }
-    }>
+      style={
+        {
+          background: 'linear-gradient(to bottom, #f3f5f0 10%, #fff 100%)'
+        }
+      }>
 
-          {showFirstChild && <ReviewSummary />}
+      {showFirstChild && <ReviewSummary />}
       {/* The Summary Badge sits slightly on top of this container */}
-      
 
-       <ReviewTopAwards />
+
+      <ReviewTopAwards />
 
 
 
       {/* 3x3 Grid */}
-    
-        <div className="grid review-card grid-cols-1 grid-change md:grid-cols-3 gap-6 mb-12">
-      {reviews.map((review) => (
-       <AnimateIn>
-        <ReviewCard key={review.id} data={review} />
-   </AnimateIn>
-      ))}
-    </div>
-    
+
+      <div className="grid review-card grid-cols-2 grid-change md:grid-cols-4 gap-6 mb-12">
+        {reviews.map((review) => (
+          <AnimateIn>
+            <ReviewCard key={review.id} data={review} />
+          </AnimateIn>
+        ))}
+      </div>
+
 
       {/* Center Button */}
       <div className="flex justify-center">
         <AnimateIn>
-        <Link
-          href="https://bark.com"
-          target="_blank"
-          rel="noopener noreferrer"
-         className="font-parkinsans w-[fit-content] bg-luxury-pink text-sm px-7.5 py-3.5 rounded-full cursor-pointer text-luxury-lite font-medium  tracking-normal transition-all duration-300 hover:shadow-lg transform hover:scale-[1.0]"
+          <Link
+            href="https://bark.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-parkinsans w-[fit-content] bg-luxury-pink text-sm px-7.5 py-3.5 rounded-full cursor-pointer text-luxury-lite font-medium  tracking-normal transition-all duration-300 hover:shadow-lg transform hover:scale-[1.0]"
 
-        >
-          View Our Reviews on Bark
-        </Link>
+          >
+            View Our Reviews on Bark
+          </Link>
         </AnimateIn>
       </div>
     </div>
